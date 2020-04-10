@@ -1,0 +1,2 @@
+# cloud-filesystem-ui
+This is an angular project. All rights are reserved to this project https://github.com/akveo/ngx-admin. So i only used it for viewing my microservice projects. By downloading the "Empty starter kit" version of this project from https://github.com/akveo/ngx-admin/tree/starter-kit, I have added two menus to the empty project. It will keep on adding some extra menus to the project.
