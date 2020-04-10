@@ -1,0 +1,46 @@
+<div *ngIf="subFolderInfo?.folderList.length; else foldersNotExist">
+    <nb-card [nbSpinner]="foldersLoaded" nbSpinnerSize="medium" nbSpinnerStatus="primary">
+      <nb-card-header>
+        <div>
+          <h6 class="text-info">Folder Id : {{subFolderInfo?.folderList[0].folderId}} / ParentFolder ID : {{subFolderInfo?.folderList[0].parentFolderId}}</h6>
+        </div>
+      </nb-card-header>
+      <nb-card-body>
+        <nb-accordion multi *ngFor="let fInfo of subFolderInfo?.folderList; let ifolder=index">
+          <nb-accordion-item>
+            <nb-accordion-item-header  (click)="itemtoggle(fInfo)">
+              <div class="text-success">
+                {{ fInfo.folderName }}
+              </div>
+            </nb-accordion-item-header>
+            <nb-accordion-item-body>
+              <div *ngIf="fInfo.toggled">
+                <c-folders [folderID]=fInfo.folderId></c-folders>
+                <c-files [folderID]=fInfo.folderId></c-files>
+              </div>
+            </nb-accordion-item-body>
+          </nb-accordion-item>
+        </nb-accordion>
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <ng-template #foldersNotExist>
+    <nb-alert status="info" accent="warning">No folder detected</nb-alert>
+  </ng-template>
+  
+  
+  <!-- <nb-accordion multi *ngFor="let fInfo of subFolderInfo?.folderList; let ifolder=index">
+    <nb-accordion-item>
+      <nb-accordion-item-header  (click)="itemtoggle(fInfo)">
+        <div class="text-success">
+          {{ fInfo.folderName }}
+        </div>
+      </nb-accordion-item-header>
+      <nb-accordion-item-body>
+        <div *ngIf="fInfo.toggled">
+          <c-folders [folderID]=fInfo.folderId></c-folders>
+          <c-files [folderID]=fInfo.folderId></c-files>
+        </div>
+      </nb-accordion-item-body>
+    </nb-accordion-item>
+  </nb-accordion> -->

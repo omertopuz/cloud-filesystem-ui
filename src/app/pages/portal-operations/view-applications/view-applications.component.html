@@ -1,0 +1,20 @@
+<nb-card class="inline-form-card">
+    
+    <nb-card-body>
+      <form class="form-inline" [formGroup]="searchForm" (ngSubmit)="doSearch(searchForm.value)">
+        <input type="text" nbInput fullWidth placeholder="Tax Number" formControlName="taxNumber">
+        <input type="text" nbInput fullWidth placeholder="Project Id" formControlName="projectId">
+        <button type="submit" nbButton status="primary">Ara</button>
+      </form>
+
+            
+    </nb-card-body>
+  </nb-card>
+
+  <nb-card>
+    <nb-card-body>
+  
+      
+    </nb-card-body>
+  </nb-card>
+  

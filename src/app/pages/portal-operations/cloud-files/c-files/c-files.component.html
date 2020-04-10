@@ -1,0 +1,60 @@
+
+<div class="row" *ngIf="folderFiles?.fileInfoList.length; else filesNotExist">
+    <nb-card class="inline-form-card" [nbSpinner]="filesLoaded" nbSpinnerSize="medium" nbSpinnerStatus="primary">
+      <nb-card-header>Files List</nb-card-header>
+      <nb-card-body>
+        <ng2-smart-table [settings]="settings" [source]="folderFiles?.fileInfoList">
+        </ng2-smart-table>
+        <!-- <table class="table" >
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>File Name</th>
+              <th>File Meta Data Id</th>
+              <th>Folder Id</th>
+              <th>Category</th>
+              <th>Key Field</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let fInfo of folderFiles?.fileInfoList; let ifile=index">
+              <td>{{ ifile+1 }}</td>
+              <td><nb-icon icon="file-text-outline"></nb-icon>{{ fInfo.fileName }}</td>
+              <td>{{ fInfo.fileMetaDataId }}</td>
+              <td>{{ fInfo.folderId }}</td>
+              <td>{{ fInfo.category }}</td>
+              <td>{{ fInfo.keyField }}</td>
+            </tr>
+          </tbody>
+        </table>    -->
+
+      </nb-card-body>
+    </nb-card>
+  </div>
+  
+  <ng-template #filesNotExist>
+    <nb-alert status="info" accent="warning">No files detected</nb-alert>
+  </ng-template>
+  
+   <!-- <table class="table" *ngIf="folderFiles?.fileInfoList.length; else filesNotExist">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>File Name</th>
+        <th>File Meta Data Id</th>
+        <th>Folder Id</th>
+        <th>Category</th>
+        <th>Key Field</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let fInfo of folderFiles?.fileInfoList; let ifile=index">
+        <td>{{ ifile+1 }}</td>
+        <td><nb-icon icon="file-text-outline"></nb-icon>{{ fInfo.fileName }}</td>
+        <td>{{ fInfo.fileMetaDataId }}</td>
+        <td>{{ fInfo.folderId }}</td>
+        <td>{{ fInfo.category }}</td>
+        <td>{{ fInfo.keyField }}</td>
+      </tr>
+    </tbody>
+  </table>    -->
